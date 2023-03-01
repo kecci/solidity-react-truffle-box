@@ -1,10 +1,10 @@
 # solidity-react-truffle-box
-Part 3: Step-by-step building web3 smart contract with react truffle box, solidity, and ABI (Application Binary Interface)
+Chapter 3: Step-by-step building web3 smart contract with react truffle box, solidity, and ABI (Application Binary Interface)
 
-## Step Parts
-- Part 1: https://github.com/kecci/solidity-remix-basic
-- Part 2: https://github.com/kecci/solidity-truffle-ganache-remix
-- Part 3: https://github.com/kecci/solidity-react-truffle-box (you in here)
+## The Chapters
+- Chapter 1: https://github.com/kecci/solidity-remix-basic
+- Chapter 2: https://github.com/kecci/solidity-truffle-ganache-remix
+- Chapter 3: https://github.com/kecci/solidity-react-truffle-box (you in here)
 
 ## Table of Contents
 - [solidity-react-truffle-box](#solidity-react-truffle-box)
