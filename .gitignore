@@ -1,31 +1,63 @@
-# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+# See http://help.github.com/ignore-files/ for more about ignoring files.
 
-# Dependencies
-node_modules
-.pnp
-.pnp.js
-
-# Production
 build
-client/src/contracts
-client/*/src/contracts
+dist
+node_modules
+lint.xml
+reports/*
+babelify-src
+docs/_build
+.tern-port
+TODO
+soljson.js
+*~
+*_group*.*.ts
+*_group*.ts
+stats.json
 
-# Testing
-coverage
 
-# Env
-.env
-.env.local
-.env.development.local
-.env.test.local
-.env.production.local
+# compiled output
+/dist
+/tmp
+/out-tsc
+artifacts/
 
-# Editor
-.vscode
+# dependencies
+/node_modules
 
-# Misc.
+# IDEs and editors
+/.idea
+.project
+.classpath
+.c9/
+*.launch
+.settings/
+*.sublime-workspace
+.vscode/
+
+# IDE - VSCode
+.vscode/*
+!.vscode/settings.json
+!.vscode/tasks.json
+!.vscode/launch.json
+!.vscode/extensions.json
+
+# misc
+/.sass-cache
+/connect.lock
+/coverage
+/libpeerconnection.log
+npm-debug.log
+lerna-debug.log
+yarn-error.log
+testem.log
+/typings
+
+# System Files
 .DS_Store
+.vscode/settings.json
+.vscode/launch.json
+libs/remix-node/
+libs/remix-niks/
 
-npm-debug.log*
-yarn-debug.log*
-yarn-error.log*
+apps/remix-react
