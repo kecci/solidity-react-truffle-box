@@ -2,13 +2,13 @@
 Chapter 3: Step-by-step building web3 smart contract with react truffle box, solidity, and ABI (Application Binary Interface)
 
 ## The Chapters
-- Chapter 1: https://github.com/kecci/solidity-remix-basic
-- Chapter 2: https://github.com/kecci/solidity-truffle-ganache-remix
-- Chapter 3: https://github.com/kecci/solidity-react-truffle-box (you in here)
+- Chapter 1: [Solidity Remix Basic Syntax](https://github.com/kecci/solidity-remix-basic)
+- Chapter 2: [Simulation VM with Ganache and MetaMask for Solidity Smart Contract](https://github.com/kecci/solidity-truffle-ganache-remix)
+- Chapter 3: [Building Simple Decentralized Application with React and Truffle Box](https://github.com/kecci/solidity-react-truffle-box) (you in here)
 
 ## Table of Contents
 - [solidity-react-truffle-box](#solidity-react-truffle-box)
-  - [Step Parts](#step-parts)
+  - [The Chapters](#the-chapters)
   - [Table of Contents](#table-of-contents)
   - [ABI (Application Binary Interface)](#abi-application-binary-interface)
   - [React Truffle Box](#react-truffle-box)
