@@ -20,9 +20,9 @@ In this chapter, we will explore the process of building dApps using Solidity, R
     - [Connecting Smart Contract to Website](#connecting-smart-contract-to-website)
     - [How ABI works ?](#how-abi-works-)
     - [ABI vs API](#abi-vs-api)
-    - [Compilations Detail](#compilations-detail)
   - [React Truffle Box](#react-truffle-box)
-    - [Installation](#installation)
+    - [Install npm \& npx with nvm (version manager)](#install-npm--npx-with-nvm-version-manager)
+    - [React-Truffle Installation](#react-truffle-installation)
     - [FAQ](#faq)
   - [Setup Ganache with Truffle Box](#setup-ganache-with-truffle-box)
     - [I. Ganache workspace](#i-ganache-workspace)
@@ -31,9 +31,10 @@ In this chapter, we will explore the process of building dApps using Solidity, R
     - [IV. Ganache Contract](#iv-ganache-contract)
     - [V. Truffle Migrate](#v-truffle-migrate)
   - [Run Client (React Truffle Box)](#run-client-react-truffle-box)
-    - [Run NPX](#run-npx)
-    - [Connect to Metamask](#connect-to-metamask)
+    - [Run web application](#run-web-application)
+    - [Open web application](#open-web-application)
   - [Source](#source)
+  - [Conclusion](#conclusion)
 
 ## ABI (Application Binary Interface)
 ![ABI](/assets/ABI-Diagram.png)
@@ -66,15 +67,36 @@ ABI plays an essential role in the development of decentralized applications (dA
 - ABI handled by compiler, like a Remix.
 - ABI are in the form of a JSON.
 
+ABI Example (json format)
+![img](assets/ABI-Format-json.png)
 
-### Compilations Detail
-![img](assets/ABI-Format.png)
-
+or you can see on the `/client/src/contracts/SimpleStorage.json` after you do truffle compile. Please read [II. Truffle Compile](#ii-truffle-compile)
 
 ## React Truffle Box
 This box comes with everything you need to start using Truffle to write, compile, test, and deploy smart contracts, and interact with them from a React app.
 
-### Installation
+### Install npm & npx with nvm (version manager)
+This is not mandatory, but I do love version manager so you can use nvm for installing npm and npx (if you don't have npm before).
+- https://github.com/nvm-sh/nvm
+
+Download & Install:
+```
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.3/install.sh | bash
+```
+
+Intallation Command, you can choose between:
+```
+# Install the latest available version
+nvm install node
+
+# Install the latest LTS version
+nvm install --lts
+
+# Install a specific version number
+nvm install 8.0.0
+```
+
+### React-Truffle Installation
 
 First ensure you are in an empty directory.
 
@@ -112,28 +134,141 @@ From there, follow the instructions on the hosted React app. It will walk you th
 
 ## Setup Ganache with Truffle Box
 
+Source: https://www.youtube.com/watch?v=Qy_95FYLM_k&list=PLH1gH0TmFBBhvZi4kEqU6kCjyv_y8qBae&index=36
+
 ### I. Ganache workspace
-[TBD](https://www.youtube.com/watch?v=Qy_95FYLM_k&list=PLH1gH0TmFBBhvZi4kEqU6kCjyv_y8qBae&index=36)
+Setting Truffle Projects to your `truffle-config.js`
+![ganache](assets/Ganache%20-%20Setting%20Truffle%20Projects.png)
+
+Setting your `truffle-config.js` to like this.
+![truffle](assets/Truffle%20-%20Setting%20truffle%20json%20for%20development.png)
 
 ### II. Truffle Compile
-TBD
+command
+```
+cd truffle
+npx truffle compile
+```
 
 ### III. Truffle Test
-TBD
+command
+```
+cd truffle
+npx truffle test
+```
+
+example output
+```
+Using network 'test'.
+
+
+Compiling your contracts...
+===========================
+> Compiling ./test/SimpleStorageTest.sol
+> Artifacts written to /var/folders/p1/3r66895x1296c01c8p3t1sfr0000gn/T/test--82799-x8m2Gga0B2JI
+> Compiled successfully using:
+   - solc: 0.8.18+commit.87f61d96.Emscripten.clang
+
+
+  SimpleStorageTest
+    ✔ testWriteValue (57ms)
+
+  Contract: SimpleStorage
+    ✔ should read newly written values (53ms)
+
+
+  2 passing (3s)
+```
 
 ### IV. Ganache Contract
 TBD
 
 ### V. Truffle Migrate
-TBD
+command
+```
+cd truffle
+npx truffle migrate
+```
+
+output sample
+```
+Compiling your contracts...
+===========================
+> Everything is up to date, there is nothing to compile.
+
+
+Starting migrations...
+======================
+> Network name:    'development'
+> Network id:      5777
+> Block gas limit: 6721975 (0x6691b7)
+
+
+1_deploy_simple_storage.js
+==========================
+
+   Replacing 'SimpleStorage'
+   -------------------------
+   > transaction hash:    0x8659dd54c24628b094de5f9d3ee3f6a8b2b400176b886006b3a64381b56151f3
+   > Blocks: 0            Seconds: 0
+   > contract address:    0x6E1d0Fc9598119187094e8990736fD7638384593
+   > block number:        1
+   > block timestamp:     1684918908
+   > account:             0x1daD53748b5130C8EBf96Fc858386c61Af24F9b9
+   > balance:             99.999575921125
+   > gas used:            125653 (0x1ead5)
+   > gas price:           3.375 gwei
+   > value sent:          0 ETH
+   > total cost:          0.000424078875 ETH
+
+   > Saving artifacts
+   -------------------------------------
+   > Total cost:      0.000424078875 ETH
+
+Summary
+=======
+> Total deployments:   1
+> Final cost:          0.000424078875 ETH
+```
+
+Ganache contracts result
+![migrate](assets/Ganache%20-%20migrate%20contract%20results.png)
 
 ## Run Client (React Truffle Box)
 
-### Run NPX
-TBD
+### Run web application
+command
+```
+cd client
+npm start
+```
 
-### Connect to Metamask
-TBD
+output
+```
+> truffle-client@0.1.0 start
+> webpack serve
+
+<i> [webpack-dev-server] Project is running at:
+<i> [webpack-dev-server] Loopback: http://localhost:8081/
+<i> [webpack-dev-server] On Your Network (IPv4): http://192.168.151.210:8081/
+<i> [webpack-dev-server] On Your Network (IPv6): http://[fe80::1]:8081/
+<i> [webpack-dev-server] Content not from webpack is served from '/Users/abyankecci/go/src/github.com/kecci/solidity-react-truffle-box/client/public' directory
+3 assets
+78 modules
+webpack 5.75.0 compiled successfully in 1987 ms
+```
+
+### Open web application
+
+Open: http://localhost:8081/
+
+Transaction Simulation
+![trx](assets/React%20-%20Sample%20transaction.gif)
+
+Ganache Result after transaction
+![trx](assets/Ganache%20-%20after%20trx%20transactions.png)
+![contracts](assets/Ganache%20-%20after%20trx%20contracts.png)
+
 
 ## Source
 - Ipung Dev:
@@ -149,3 +284,11 @@ TBD
   - Buy Ticket Simulation: https://www.youtube.com/watch?v=JXa_Y-17Oj4
 - One More Journey
   - Pete's Pet Shop: https://www.youtube.com/watch?v=kkiaBPcnc6U&list=PLde8eDss7CuQLM46HkFKnTyTNoKccQanI
+
+## Conclusion
+Congratulations! you already finished following the chapters of building Decentralized Applications. After this you can start: 
+1. Modify your `.sol` contracts on `/truffle` folder as you needed for your application. (You can following the chapter 1 and 2 for the contracts example)
+2. Modify your `EthProvider.jsx` and others on `/client/src` folder as you needed for your application. (You can following other tutorial for build react js apps)
+3. Done, you have your DApp ready to deploy !
+
+Maybe for deploy section would be in another chapter.
