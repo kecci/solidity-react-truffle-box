@@ -28,8 +28,7 @@ In this chapter, we will explore the process of building dApps using Solidity, R
     - [I. Ganache workspace](#i-ganache-workspace)
     - [II. Truffle Compile](#ii-truffle-compile)
     - [III. Truffle Test](#iii-truffle-test)
-    - [IV. Ganache Contract](#iv-ganache-contract)
-    - [V. Truffle Migrate](#v-truffle-migrate)
+    - [IV. Truffle Migrate](#iv-truffle-migrate)
   - [Run Client (React Truffle Box)](#run-client-react-truffle-box)
     - [Run web application](#run-web-application)
     - [Open web application](#open-web-application)
@@ -180,10 +179,7 @@ Compiling your contracts...
   2 passing (3s)
 ```
 
-### IV. Ganache Contract
-TBD
-
-### V. Truffle Migrate
+### IV. Truffle Migrate
 command
 ```
 cd truffle
